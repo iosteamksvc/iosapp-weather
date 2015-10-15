@@ -13,4 +13,9 @@ class InfoHourController: UIView {
         super.init(coder: aDecoder)
         
     }
+    override func intrinsicContentSize() -> CGSize {
+        let height = Int(frame.size.height)
+        let width = Int(frame.size.width)
+        return CGSize(width: width, height: height)
+    }
 }

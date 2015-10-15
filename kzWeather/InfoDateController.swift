@@ -9,7 +9,20 @@
 import UIKit
 
 class InfoDateController: UIView {
-    required init?(coder aDecoder: NSCoder) {
+    
+    
+    
+    // MARK: Initialization
+    required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
+        
     }
+    
+    
+    override func intrinsicContentSize() -> CGSize {
+        let height = Int(frame.size.height)
+        let width = Int(frame.size.width)
+        return CGSize(width: width, height: height)
+    }
+
 }
