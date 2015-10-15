@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0AA8731BCF566200FD889E /* ManageTopBtnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8741BCF566200FD889E /* ManageTopBtnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8751BCF566200FD889E /* ManageTopBtnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA87F1BCF5A4C00FD889E /* InfoDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8801BCF5A4C00FD889E /* InfoDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8811BCF5A4C00FD889E /* InfoDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8831BCF5A8700FD889E /* InfoWeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8841BCF5A8700FD889E /* InfoWeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8851BCF5A8700FD889E /* InfoWeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8871BCF63F500FD889E /* InfoHourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8881BCF63F500FD889E /* InfoHourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8891BCF63F500FD889E /* InfoHourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourController.swift */; settings = {ASSET_TAGS = (); }; };
 		FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C71BCE686400C1B22E /* AppDelegate.swift */; };
 		FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C91BCE686400C1B22E /* ViewController.swift */; };
 		FB5779CD1BCE686400C1B22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5779CB1BCE686400C1B22E /* Main.storyboard */; };
@@ -35,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageTopBtnController.swift; sourceTree = "<group>"; };
+		FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDateController.swift; sourceTree = "<group>"; };
+		FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoWeekController.swift; sourceTree = "<group>"; };
+		FB0AA8861BCF63F500FD889E /* InfoHourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHourController.swift; sourceTree = "<group>"; };
 		FB5779C41BCE686400C1B22E /* kzWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kzWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5779C71BCE686400C1B22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB5779C91BCE686400C1B22E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +115,7 @@
 		FB5779C61BCE686400C1B22E /* kzWeather */ = {
 			isa = PBXGroup;
 			children = (
+				FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */,
 				FB5779C71BCE686400C1B22E /* AppDelegate.swift */,
 				FB5779C91BCE686400C1B22E /* ViewController.swift */,
 				FB5779CB1BCE686400C1B22E /* Main.storyboard */,
@@ -106,6 +123,9 @@
 				FB5779D31BCE686500C1B22E /* LaunchScreen.storyboard */,
 				FB5779D61BCE686500C1B22E /* Info.plist */,
 				FB5779CE1BCE686400C1B22E /* kzWeather.xcdatamodeld */,
+				FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */,
+				FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */,
+				FB0AA8861BCF63F500FD889E /* InfoHourController.swift */,
 			);
 			path = kzWeather;
 			sourceTree = "<group>";
@@ -259,8 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */,
+				FB0AA8871BCF63F500FD889E /* InfoHourController.swift in Sources */,
 				FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */,
+				FB0AA87F1BCF5A4C00FD889E /* InfoDateController.swift in Sources */,
 				FB5779D01BCE686500C1B22E /* kzWeather.xcdatamodeld in Sources */,
+				FB0AA8731BCF566200FD889E /* ManageTopBtnController.swift in Sources */,
+				FB0AA8831BCF5A8700FD889E /* InfoWeekController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0AA8841BCF5A8700FD889E /* InfoWeekController.swift in Sources */,
 				FB5779E01BCE686500C1B22E /* kzWeatherTests.swift in Sources */,
+				FB0AA8801BCF5A4C00FD889E /* InfoDateController.swift in Sources */,
+				FB0AA8881BCF63F500FD889E /* InfoHourController.swift in Sources */,
+				FB0AA8741BCF566200FD889E /* ManageTopBtnController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0AA8851BCF5A8700FD889E /* InfoWeekController.swift in Sources */,
 				FB5779EB1BCE686500C1B22E /* kzWeatherUITests.swift in Sources */,
+				FB0AA8811BCF5A4C00FD889E /* InfoDateController.swift in Sources */,
+				FB0AA8891BCF63F500FD889E /* InfoHourController.swift in Sources */,
+				FB0AA8751BCF566200FD889E /* ManageTopBtnController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +519,7 @@
 				FB5779F11BCE686600C1B22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB5779F21BCE686600C1B22E /* Build configuration list for PBXNativeTarget "kzWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +528,7 @@
 				FB5779F41BCE686600C1B22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB5779F51BCE686600C1B22E /* Build configuration list for PBXNativeTarget "kzWeatherUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +537,7 @@
 				FB5779F71BCE686600C1B22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

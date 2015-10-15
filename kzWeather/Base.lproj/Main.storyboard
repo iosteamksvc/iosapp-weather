@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,13 +14,46 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="323" placeholderIntrinsicHeight="647" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b7l-NE-ZnI">
+                                <rect key="frame" x="30" y="10" width="354" height="716"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="xty-JQ-QxU" customClass="ManageTopBtnController" customModule="kzWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="57"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="250" translatesAutoresizingMaskIntoConstraints="NO" id="b3e-Bn-q8q" customClass="InfoDateController" customModule="kzWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="67" width="354" height="250"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="139" translatesAutoresizingMaskIntoConstraints="NO" id="kq5-ZR-c2S" customClass="InfoHourController" customModule="kzWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="327" width="354" height="139"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="240" translatesAutoresizingMaskIntoConstraints="NO" id="QeF-8h-4Yo" customClass="InfoWeekController" customModule="kzWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="476" width="354" height="240"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xty-JQ-QxU" firstAttribute="leading" secondItem="b7l-NE-ZnI" secondAttribute="leading" id="JiC-ZI-eTz"/>
+                                    <constraint firstItem="xty-JQ-QxU" firstAttribute="top" secondItem="b7l-NE-ZnI" secondAttribute="top" constant="20" id="O10-z3-ZN5"/>
+                                    <constraint firstItem="xty-JQ-QxU" firstAttribute="top" secondItem="b7l-NE-ZnI" secondAttribute="top" constant="10" id="O2U-AH-RyF"/>
+                                    <constraint firstAttribute="trailing" secondItem="xty-JQ-QxU" secondAttribute="trailing" id="X1j-8e-NCc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="b7l-NE-ZnI" secondAttribute="trailing" constant="10" id="Etx-eu-4CV"/>
+                            <constraint firstItem="b7l-NE-ZnI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="bZ2-Rx-oET"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="b7l-NE-ZnI" secondAttribute="bottom" constant="10" id="dSm-lj-HpY"/>
+                            <constraint firstItem="b7l-NE-ZnI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="yh4-aP-92Y"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="303" y="402"/>
         </scene>
     </scenes>
 </document>
