@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lblCity: UILabel!
     
+    private var locationService: LocationService?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +36,20 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let weatherDatastore = WeatherDatastore()
+        locationService = LocationService() { [weak self] location in
+        
+        weatherDatastore.retrieveCurrentWeatherAtLat(location.lat, lon: location.lon) {
+            currentWeatherConditions in
+            self?.renderCurrent(currentWeatherConditions)
+            return
+            }
+        }
+        
     }
     
     // MARK: Current Weather Area
@@ -63,5 +79,22 @@ class ViewController: UIViewController {
         lblCurrentTemp.text = "6°"
         lblCity.text = "Ho Chi Minh City"
     }
+    
 }
 
+private extension ViewController {
+    func renderCurrent(weatherCondition: WeatherCondition){
+        lblIcon.attributedText = iconStringFromIcon(weatherCondition.icon!, size: 20)
+        lblWeather.text = weatherCondition.weather
+        lblMinTemp.text = "\(weatherCondition.minTempCelsius.roundToInt())°"
+        lblMaxTemp.text = "\(weatherCondition.maxTempCelsius.roundToInt())°"
+        lblCurrentTemp.text = "\(weatherCondition.tempCelsius.roundToInt())°"
+        lblCity.text = weatherCondition.cityName ?? ""
+    }
+}
+
+private extension Double {
+    func roundToInt() -> Int{
+        return Int(round(self))
+    }
+}
