@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lblCity: UILabel!
     
+    @IBOutlet weak var svWeatherHourly: UIScrollView!
+    
     private var locationService: LocationService?
     
     override func viewDidLoad() {
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         styleCurrentWeatherView()
         renderCurrentWeatherView()
+        svWeatherHourly.contentSize.width = 400
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,13 +43,15 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         let weatherDatastore = WeatherDatastore()
+        
         locationService = LocationService() { [weak self] location in
         
         weatherDatastore.retrieveCurrentWeatherAtLat(location.lat, lon: location.lon) {
             currentWeatherConditions in
-            self?.renderCurrent(currentWeatherConditions)
-            return
+                self?.renderCurrent(currentWeatherConditions)
+                return
             }
         }
         
