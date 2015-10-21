@@ -26,7 +26,7 @@ class ManageTopBtnController: UIView {
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
         
-        /*
+        
         let filledStarImage = UIImage(named: "filledStar")
         
         let emptyStarImage = UIImage(named: "emptyStart")
@@ -48,7 +48,7 @@ class ManageTopBtnController: UIView {
             
             addSubview(button)
         }
-        */
+        
         
     }
     
