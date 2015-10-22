@@ -37,13 +37,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    /*func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         locationManager.stopUpdatingLocation()
         NSLog("Error: \(error)")
         dispatch_async(dispatch_get_main_queue()){
             self.onLocationFound(Location(lat: 37.3175, lon: 122.0419))
         }
-    }
+    }*/
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locationArray = locations as NSArray
