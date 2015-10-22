@@ -8,22 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8095C8D6E5540FA1E177B732 /* Pods_kzWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */; };
+		EE13DD9A1BD76CDE00BE6999 /* WeatherHourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD991BD76CDE00BE6999 /* WeatherHourlyForecastView.swift */; settings = {ASSET_TAGS = (); }; };
+		EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD9B1BD7926300BE6999 /* CurrentWeatherView.swift */; settings = {ASSET_TAGS = (); }; };
+		EE13DD9E1BD79AE000BE6999 /* InfoDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD9D1BD79AE000BE6999 /* InfoDayView.swift */; settings = {ASSET_TAGS = (); }; };
+		EE13DDA01BD79B8B00BE6999 /* WeatherDaysForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD9F1BD79B8B00BE6999 /* WeatherDaysForecastView.swift */; settings = {ASSET_TAGS = (); }; };
 		EE6E2BB31BD0DEBB006492F3 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6E2BB21BD0DEBB006492F3 /* WeatherCondition.swift */; settings = {ASSET_TAGS = (); }; };
 		EE6E2BB51BD0DF30006492F3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6E2BB41BD0DF30006492F3 /* LocationService.swift */; settings = {ASSET_TAGS = (); }; };
 		EE6E2BB71BD0E67F006492F3 /* WeatherDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6E2BB61BD0E67F006492F3 /* WeatherDatastore.swift */; settings = {ASSET_TAGS = (); }; };
 		EE6E2BB91BD10497006492F3 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6E2BB81BD10497006492F3 /* Functions.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8731BCF566200FD889E /* ManageTopBtnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8741BCF566200FD889E /* ManageTopBtnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8751BCF566200FD889E /* ManageTopBtnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA87F1BCF5A4C00FD889E /* InfoDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8801BCF5A4C00FD889E /* InfoDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8811BCF5A4C00FD889E /* InfoDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8831BCF5A8700FD889E /* InfoWeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8841BCF5A8700FD889E /* InfoWeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8851BCF5A8700FD889E /* InfoWeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8871BCF63F500FD889E /* InfoHourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8881BCF63F500FD889E /* InfoHourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourController.swift */; settings = {ASSET_TAGS = (); }; };
-		FB0AA8891BCF63F500FD889E /* InfoHourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourController.swift */; settings = {ASSET_TAGS = (); }; };
+		EE9F9EDA1BD88B4D008D6FF7 /* WeatherSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F9ED91BD88B4D008D6FF7 /* WeatherSettingView.swift */; settings = {ASSET_TAGS = (); }; };
+		EE9F9EDC1BD88CFB008D6FF7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F9EDB1BD88CFB008D6FF7 /* Utils.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8871BCF63F500FD889E /* InfoHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourView.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8881BCF63F500FD889E /* InfoHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourView.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0AA8891BCF63F500FD889E /* InfoHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourView.swift */; settings = {ASSET_TAGS = (); }; };
 		FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C71BCE686400C1B22E /* AppDelegate.swift */; };
 		FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C91BCE686400C1B22E /* ViewController.swift */; };
 		FB5779CD1BCE686400C1B22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5779CB1BCE686400C1B22E /* Main.storyboard */; };
@@ -55,14 +52,17 @@
 		57F363B108EA0F827477F2F6 /* Pods-kzWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0CEA7A8A0164FD4A244E73 /* Pods-kzWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.release.xcconfig"; sourceTree = "<group>"; };
 		D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kzWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE13DD991BD76CDE00BE6999 /* WeatherHourlyForecastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHourlyForecastView.swift; sourceTree = "<group>"; };
+		EE13DD9B1BD7926300BE6999 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
+		EE13DD9D1BD79AE000BE6999 /* InfoDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDayView.swift; sourceTree = "<group>"; };
+		EE13DD9F1BD79B8B00BE6999 /* WeatherDaysForecastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDaysForecastView.swift; sourceTree = "<group>"; };
 		EE6E2BB21BD0DEBB006492F3 /* WeatherCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		EE6E2BB41BD0DF30006492F3 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		EE6E2BB61BD0E67F006492F3 /* WeatherDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDatastore.swift; sourceTree = "<group>"; };
 		EE6E2BB81BD10497006492F3 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageTopBtnController.swift; sourceTree = "<group>"; };
-		FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDateController.swift; sourceTree = "<group>"; };
-		FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoWeekController.swift; sourceTree = "<group>"; };
-		FB0AA8861BCF63F500FD889E /* InfoHourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHourController.swift; sourceTree = "<group>"; };
+		EE9F9ED91BD88B4D008D6FF7 /* WeatherSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSettingView.swift; sourceTree = "<group>"; };
+		EE9F9EDB1BD88CFB008D6FF7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FB0AA8861BCF63F500FD889E /* InfoHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHourView.swift; sourceTree = "<group>"; };
 		FB5779C41BCE686400C1B22E /* kzWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kzWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5779C71BCE686400C1B22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB5779C91BCE686400C1B22E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 		EEB0A0131BD652F900EF9645 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EE9F9EDB1BD88CFB008D6FF7 /* Utils.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -123,7 +124,6 @@
 		EEB0A0141BD6530900EF9645 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EE6E2BB81BD10497006492F3 /* Functions.swift */,
 				EE6E2BB21BD0DEBB006492F3 /* WeatherCondition.swift */,
 				EE6E2BB61BD0E67F006492F3 /* WeatherDatastore.swift */,
 				EE6E2BB41BD0DF30006492F3 /* LocationService.swift */,
@@ -141,9 +141,13 @@
 		EEB0A0161BD6531B00EF9645 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FB0AA8861BCF63F500FD889E /* InfoHourController.swift */,
-				FB0AA8821BCF5A8700FD889E /* InfoWeekController.swift */,
-				FB0AA87E1BCF5A4C00FD889E /* InfoDateController.swift */,
+				EE6E2BB81BD10497006492F3 /* Functions.swift */,
+				FB0AA8861BCF63F500FD889E /* InfoHourView.swift */,
+				EE13DD991BD76CDE00BE6999 /* WeatherHourlyForecastView.swift */,
+				EE13DD9B1BD7926300BE6999 /* CurrentWeatherView.swift */,
+				EE13DD9D1BD79AE000BE6999 /* InfoDayView.swift */,
+				EE13DD9F1BD79B8B00BE6999 /* WeatherDaysForecastView.swift */,
+				EE9F9ED91BD88B4D008D6FF7 /* WeatherSettingView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -152,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				FB5779C91BCE686400C1B22E /* ViewController.swift */,
-				FB0AA8721BCF566200FD889E /* ManageTopBtnController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -415,15 +418,18 @@
 			files = (
 				EE6E2BB31BD0DEBB006492F3 /* WeatherCondition.swift in Sources */,
 				FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */,
-				FB0AA8871BCF63F500FD889E /* InfoHourController.swift in Sources */,
+				FB0AA8871BCF63F500FD889E /* InfoHourView.swift in Sources */,
+				EE9F9EDC1BD88CFB008D6FF7 /* Utils.swift in Sources */,
+				EE13DD9E1BD79AE000BE6999 /* InfoDayView.swift in Sources */,
 				FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */,
+				EE9F9EDA1BD88B4D008D6FF7 /* WeatherSettingView.swift in Sources */,
 				EE6E2BB91BD10497006492F3 /* Functions.swift in Sources */,
-				FB0AA87F1BCF5A4C00FD889E /* InfoDateController.swift in Sources */,
+				EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */,
+				EE13DDA01BD79B8B00BE6999 /* WeatherDaysForecastView.swift in Sources */,
 				FB5779D01BCE686500C1B22E /* kzWeather.xcdatamodeld in Sources */,
 				EE6E2BB71BD0E67F006492F3 /* WeatherDatastore.swift in Sources */,
-				FB0AA8731BCF566200FD889E /* ManageTopBtnController.swift in Sources */,
 				EE6E2BB51BD0DF30006492F3 /* LocationService.swift in Sources */,
-				FB0AA8831BCF5A8700FD889E /* InfoWeekController.swift in Sources */,
+				EE13DD9A1BD76CDE00BE6999 /* WeatherHourlyForecastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,11 +437,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB0AA8841BCF5A8700FD889E /* InfoWeekController.swift in Sources */,
 				FB5779E01BCE686500C1B22E /* kzWeatherTests.swift in Sources */,
-				FB0AA8801BCF5A4C00FD889E /* InfoDateController.swift in Sources */,
-				FB0AA8881BCF63F500FD889E /* InfoHourController.swift in Sources */,
-				FB0AA8741BCF566200FD889E /* ManageTopBtnController.swift in Sources */,
+				FB0AA8881BCF63F500FD889E /* InfoHourView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,11 +446,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB0AA8851BCF5A8700FD889E /* InfoWeekController.swift in Sources */,
 				FB5779EB1BCE686500C1B22E /* kzWeatherUITests.swift in Sources */,
-				FB0AA8811BCF5A4C00FD889E /* InfoDateController.swift in Sources */,
-				FB0AA8891BCF63F500FD889E /* InfoHourController.swift in Sources */,
-				FB0AA8751BCF566200FD889E /* ManageTopBtnController.swift in Sources */,
+				FB0AA8891BCF63F500FD889E /* InfoHourView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
