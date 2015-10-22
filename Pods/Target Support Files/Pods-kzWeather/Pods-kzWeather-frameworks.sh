@@ -85,12 +85,14 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-kzWeather/Alamofire.framework"
+  install_framework "Pods-kzWeather/Cartography.framework"
   install_framework "Pods-kzWeather/LatoFont.framework"
   install_framework "Pods-kzWeather/SwiftyJSON.framework"
   install_framework "Pods-kzWeather/WeatherIconsKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-kzWeather/Alamofire.framework"
+  install_framework "Pods-kzWeather/Cartography.framework"
   install_framework "Pods-kzWeather/LatoFont.framework"
   install_framework "Pods-kzWeather/SwiftyJSON.framework"
   install_framework "Pods-kzWeather/WeatherIconsKit.framework"

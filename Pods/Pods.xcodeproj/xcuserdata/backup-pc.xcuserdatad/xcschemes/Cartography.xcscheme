@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '052F553A5EE76CDC11F33C6C'
-               BlueprintName = 'LatoFont-LatoFont'
+               BlueprintIdentifier = 'DE31EAE47F1E268F5D54E06F'
+               BlueprintName = 'Cartography'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'LatoFont.bundle'>
+               BuildableName = 'Cartography.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
