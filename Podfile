@@ -9,6 +9,7 @@ target 'kzWeather' do
     pod 'SwiftyJSON', :git => "https://github.com/SwiftyJSON/SwiftyJSON.git"
     pod 'WeatherIconsKit', :git => "https://github.com/gscalzo/WeatherIconsKit.git"
     pod 'LatoFont', :git => "https://github.com/gscalzo/LatoFont.git"
+    pod 'Cartography', :git => "https://github.com/robb/Cartography.git"
 end
 
 target 'kzWeatherTests' do
