@@ -21,6 +21,13 @@
 		FB0AA8871BCF63F500FD889E /* InfoHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourView.swift */; settings = {ASSET_TAGS = (); }; };
 		FB0AA8881BCF63F500FD889E /* InfoHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourView.swift */; settings = {ASSET_TAGS = (); }; };
 		FB0AA8891BCF63F500FD889E /* InfoHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AA8861BCF63F500FD889E /* InfoHourView.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0DDE551BD8DBCE004C50CA /* FavoritePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE541BD8DBCE004C50CA /* FavoritePlace.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0DDE561BD8DBCE004C50CA /* FavoritePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE541BD8DBCE004C50CA /* FavoritePlace.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0DDE571BD8DBCE004C50CA /* FavoritePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE541BD8DBCE004C50CA /* FavoritePlace.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0DDE5D1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0DDE5E1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0DDE5F1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB0DDE651BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE641BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C71BCE686400C1B22E /* AppDelegate.swift */; };
 		FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C91BCE686400C1B22E /* ViewController.swift */; };
 		FB5779CD1BCE686400C1B22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5779CB1BCE686400C1B22E /* Main.storyboard */; };
@@ -63,6 +70,9 @@
 		EE9F9ED91BD88B4D008D6FF7 /* WeatherSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSettingView.swift; sourceTree = "<group>"; };
 		EE9F9EDB1BD88CFB008D6FF7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FB0AA8861BCF63F500FD889E /* InfoHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHourView.swift; sourceTree = "<group>"; };
+		FB0DDE541BD8DBCE004C50CA /* FavoritePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePlace.swift; sourceTree = "<group>"; };
+		FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePlaceTableViewController.swift; sourceTree = "<group>"; };
+		FB0DDE641BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePlaceTableViewCell.swift; sourceTree = "<group>"; };
 		FB5779C41BCE686400C1B22E /* kzWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kzWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5779C71BCE686400C1B22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB5779C91BCE686400C1B22E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 		EEB0A0151BD6531400EF9645 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB0DDE541BD8DBCE004C50CA /* FavoritePlace.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 				EE13DD9D1BD79AE000BE6999 /* InfoDayView.swift */,
 				EE13DD9F1BD79B8B00BE6999 /* WeatherDaysForecastView.swift */,
 				EE9F9ED91BD88B4D008D6FF7 /* WeatherSettingView.swift */,
+				FB0DDE641BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -156,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5779C91BCE686400C1B22E /* ViewController.swift */,
+				FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -419,12 +432,15 @@
 				EE6E2BB31BD0DEBB006492F3 /* WeatherCondition.swift in Sources */,
 				FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */,
 				FB0AA8871BCF63F500FD889E /* InfoHourView.swift in Sources */,
+				FB0DDE551BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,
 				EE9F9EDC1BD88CFB008D6FF7 /* Utils.swift in Sources */,
 				EE13DD9E1BD79AE000BE6999 /* InfoDayView.swift in Sources */,
 				FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */,
 				EE9F9EDA1BD88B4D008D6FF7 /* WeatherSettingView.swift in Sources */,
 				EE6E2BB91BD10497006492F3 /* Functions.swift in Sources */,
 				EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */,
+				FB0DDE651BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift in Sources */,
+				FB0DDE5D1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
 				EE13DDA01BD79B8B00BE6999 /* WeatherDaysForecastView.swift in Sources */,
 				FB5779D01BCE686500C1B22E /* kzWeather.xcdatamodeld in Sources */,
 				EE6E2BB71BD0E67F006492F3 /* WeatherDatastore.swift in Sources */,
@@ -438,6 +454,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB5779E01BCE686500C1B22E /* kzWeatherTests.swift in Sources */,
+				FB0DDE5E1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
+				FB0DDE561BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,
 				FB0AA8881BCF63F500FD889E /* InfoHourView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +465,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB5779EB1BCE686500C1B22E /* kzWeatherUITests.swift in Sources */,
+				FB0DDE5F1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
+				FB0DDE571BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,
 				FB0AA8891BCF63F500FD889E /* InfoHourView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
