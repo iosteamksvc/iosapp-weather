@@ -11,20 +11,27 @@ import LatoFont
 import WeatherIconsKit
 import Cartography
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
     
     private let currentWeatherView = CurrentWeatherView(frame: CGRectZero)
     private let hourlyForecastView = WeatherHourlyForecastView(frame: CGRectZero)
     private let daysForecastView = WeatherDaysForecastView(frame: CGRectZero)
-    
+    private let scrollView = UIScrollView()
     private var locationService: LocationService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(currentWeatherView)
-        self.view.addSubview(hourlyForecastView)
-        self.view.addSubview(daysForecastView)
+        //self.view.addSubview(currentWeatherView)
+        //self.view.addSubview(hourlyForecastView)
+        //self.view.addSubview(daysForecastView)
+        
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.addSubview(currentWeatherView)
+        scrollView.addSubview(hourlyForecastView)
+        scrollView.addSubview(daysForecastView)
+        scrollView.delegate = self
+        view.addSubview(scrollView)
         
         layoutView()
 
@@ -65,6 +72,13 @@ class ViewController: UIViewController {
 // MARK: Layout
 private extension ViewController {
     func layoutView() {
+        constrain(scrollView) { view in
+            view.top == view.superview!.top
+            view.bottom == view.superview!.bottom
+            view.left == view.superview!.left
+            view.right == view.superview!.right
+        }
+        
         constrain(currentWeatherView) { view in
             // view.top == view.superview!.top + 50
             view.width == view.superview!.width
@@ -83,12 +97,58 @@ private extension ViewController {
             view.bottom == view.superview!.bottom - 20
             view.centerX == view.superview!.centerX
         }
+        
+        let currentWeatherInsect: CGFloat = view.frame.height - 160 - 10
+        constrain(currentWeatherView) { view in
+            view.top == view.superview!.top + currentWeatherInsect
+            return
+        }
+        
+        
     }
 }
 
 // MARK: Render
 private extension ViewController {
     func renderCurrent(currentWeatherConditions: WeatherCondition){
+        
+        if currentWeatherConditions.windSpeed > 38.0 {
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "It's going to be windy today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+        
+        if currentWeatherConditions.rain == 1.0 {
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "Don't forget your umbrella today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+        
+        if currentWeatherConditions.maxTempCelsius >= 35 {
+            
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "It's going to be Hot today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            
+        }
+        
+        if currentWeatherConditions.minTempCelsius <= 20 {
+            
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "It's going to be Cold today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            
+        }
+        
+        
         currentWeatherView.render(currentWeatherConditions)
     }
     
@@ -100,4 +160,5 @@ private extension ViewController {
         daysForecastView.render(weatherConditions)
     }
 }
+
 

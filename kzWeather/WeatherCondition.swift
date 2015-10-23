@@ -15,6 +15,9 @@ struct WeatherCondition {
     let tempKelvin: Double
     let maxTempKelvin: Double
     let minTempKelvin: Double
+    let windSpeed: Double
+    let humidity: Double
+    let rain: Double
     
     var tempFahrenheit: Double {
         get {
