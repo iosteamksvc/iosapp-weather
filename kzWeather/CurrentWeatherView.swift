@@ -253,6 +253,12 @@ private extension CurrentWeatherView{
         humidityLevellbl.font = UIFont.latoLightFontOfSize(8)
         humidityLevellbl.textColor = UIColor.whiteColor()
         
+        iconLbl.attributedText = WIKFontIcon.wiDaySunnyIconWithSize(20).attributedString()
+        weatherLbl.text = "Sunny"
+        minTempLbl.text = "4°"
+        maxTempLbl.text = "10°"
+        currentTempLbl.text = "6°"
+        cityLbl.text = "Unknown"
         
     }
 }
@@ -331,16 +337,4 @@ extension CurrentWeatherView {
         })
     }
     
-}
-
-// MARK: Render
-extension CurrentWeatherView{
-    func render(){
-        iconLbl.attributedText = WIKFontIcon.wiDaySunnyIconWithSize(20).attributedString()
-        weatherLbl.text = "Sunny"
-        minTempLbl.text = "4°"
-        maxTempLbl.text = "10°"
-        currentTempLbl.text = "6°"
-        cityLbl.text = "London"
-    }
 }
