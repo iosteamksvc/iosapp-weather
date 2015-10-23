@@ -52,7 +52,7 @@ class FavoritePlaceTableViewController: UITableViewController {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "FavoritePlaceTableViewCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! FavoritePlaceTableView
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! FavoritePlaceTableViewCell
         
         // Fetches the appropriate meal for the data source layout.
         let favoritePlace = favoritePlaces[indexPath.row]
