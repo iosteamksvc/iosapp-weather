@@ -88,15 +88,21 @@ private extension WeatherDatastore {
         let tempKelvin = json["main"]["temp"].doubleValue
         let maxTempKelvin = json["main"]["temp_max"].doubleValue
         let minTempKelvin = json["main"]["temp_min"].doubleValue
+        let humidity = json["main"]["humidity"].doubleValue
+        let windSpeed = json["wind"]["speed"].doubleValue
+        let rain = json["rain"]["3h"].doubleValue
         
-        return WeatherCondition(
+        return WeatherCondition (
             cityName: name,
             weather: weather,
             icon: IconType(rawValue: icon),
             time: time,
             tempKelvin: tempKelvin,
             maxTempKelvin: maxTempKelvin,
-            minTempKelvin: minTempKelvin
+            minTempKelvin: minTempKelvin,
+            windSpeed: windSpeed,
+            humidity: humidity,
+            rain: rain
         )
     }
     
@@ -109,6 +115,9 @@ private extension WeatherDatastore {
         let tempKelvin = json["temp"]["day"].doubleValue
         let maxTempKelvin = json["temp"]["max"].doubleValue
         let minTempKelvin = json["temp"]["min"].doubleValue
+        let humidity = json["main"]["humidity"].doubleValue
+        let windSpeed = json["wind"]["speed"].doubleValue
+        let rain = json["rain"]["3h"].doubleValue
         
         return WeatherCondition(
             cityName: name,
@@ -117,7 +126,11 @@ private extension WeatherDatastore {
             time: time,
             tempKelvin: tempKelvin,
             maxTempKelvin: maxTempKelvin,
-            minTempKelvin: minTempKelvin
+            minTempKelvin: minTempKelvin,
+            windSpeed: windSpeed,
+            humidity: humidity,
+            rain: rain
+
         )
     }
     

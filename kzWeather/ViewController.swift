@@ -11,12 +11,12 @@ import LatoFont
 import WeatherIconsKit
 import Cartography
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
     
     private let currentWeatherView = CurrentWeatherView(frame: CGRectZero)
     private let hourlyForecastView = WeatherHourlyForecastView(frame: CGRectZero)
     private let daysForecastView = WeatherDaysForecastView(frame: CGRectZero)
-    
+    private let scrollView = UIScrollView()
     private var locationService: LocationService?
     
     @IBAction func addToFavorite(sender: AnyObject) {
@@ -35,9 +35,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(currentWeatherView)
-        self.view.addSubview(hourlyForecastView)
-        self.view.addSubview(daysForecastView)
+        //self.view.addSubview(currentWeatherView)
+        //self.view.addSubview(hourlyForecastView)
+        //self.view.addSubview(daysForecastView)
+        
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.addSubview(currentWeatherView)
+        scrollView.addSubview(hourlyForecastView)
+        scrollView.addSubview(daysForecastView)
+        scrollView.delegate = self
+        view.addSubview(scrollView)
         
         // MARK: 2015/10/23 Vinh Hua Quoc added start
         if let currentPlace = currentPlace {
@@ -84,6 +91,13 @@ class ViewController: UIViewController {
 // MARK: Layout
 private extension ViewController {
     func layoutView() {
+        constrain(scrollView) { view in
+            view.top == view.superview!.top
+            view.bottom == view.superview!.bottom
+            view.left == view.superview!.left
+            view.right == view.superview!.right
+        }
+        
         constrain(currentWeatherView) { view in
             // view.top == view.superview!.top + 50
             view.width == view.superview!.width
@@ -102,6 +116,14 @@ private extension ViewController {
             view.bottom == view.superview!.bottom - 20
             view.centerX == view.superview!.centerX
         }
+        
+        let currentWeatherInsect: CGFloat = view.frame.height - 160 - 10
+        constrain(currentWeatherView) { view in
+            view.top == view.superview!.top + currentWeatherInsect
+            return
+        }
+        
+        
     }
 }
 
@@ -125,4 +147,5 @@ private extension ViewController {
         daysForecastView.render(weatherConditions)
     }
 }
+
 

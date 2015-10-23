@@ -16,7 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.61176472902297974" blue="0.79607850313186646" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.037859059343434365" green="0.037859059343434365" blue="0.037859059343434365" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="VBI-kF-GFS">
                         <rightBarButtonItems>
