@@ -45,7 +45,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addSubview(daysForecastView)
         scrollView.delegate = self
         view.addSubview(scrollView)
-        
         // MARK: 2015/10/23 Vinh Hua Quoc added start
         if let currentPlace = currentPlace {
             print("View_Did_Load:"+currentPlace.name)
@@ -135,6 +134,42 @@ private extension ViewController {
         currentWeatherItem = currentWeatherConditions
         print(currentWeatherItem?.cityName)
         // 2015/10/23 Vinh Hua Quoc added end
+        if currentWeatherConditions.windSpeed > 38.0 {
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "It's going to be windy today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+        
+        if currentWeatherConditions.rain == 1.0 {
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "Don't forget your umbrella today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+        
+        if currentWeatherConditions.maxTempCelsius >= 35 {
+            
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "It's going to be Hot today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            
+        }
+        
+        if currentWeatherConditions.minTempCelsius <= 20 {
+            
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "kzWeather"
+            localNotification.alertBody = "It's going to be Cold today!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            
+        }
+        
         
         currentWeatherView.render(currentWeatherConditions)
     }
