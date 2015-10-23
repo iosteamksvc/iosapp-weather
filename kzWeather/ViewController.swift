@@ -19,12 +19,31 @@ class ViewController: UIViewController {
     
     private var locationService: LocationService?
     
+    @IBAction func addToFavorite(sender: AnyObject) {
+        print("Name:" + (currentWeatherItem?.cityName)!)
+        
+    }
+    // MARK: 2015/10/23 Vinh Hua Quoc added start
+    var currentPlace: FavoritePlace?
+    
+    var currentWeatherItem: WeatherCondition?
+    
+    
+    
+    // 2015/10/23 Vinh Hua Quoc added end
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.addSubview(currentWeatherView)
         self.view.addSubview(hourlyForecastView)
         self.view.addSubview(daysForecastView)
+        
+        // MARK: 2015/10/23 Vinh Hua Quoc added start
+        if let currentPlace = currentPlace {
+            print("View_Did_Load:"+currentPlace.name)
+        }
+        // 2015/10/23 Vinh Hua Quoc added end
         
         layoutView()
 
@@ -89,6 +108,12 @@ private extension ViewController {
 // MARK: Render
 private extension ViewController {
     func renderCurrent(currentWeatherConditions: WeatherCondition){
+        
+        // 2015/10/23 Vinh Hua Quoc added start
+        currentWeatherItem = currentWeatherConditions
+        print(currentWeatherItem?.cityName)
+        // 2015/10/23 Vinh Hua Quoc added end
+        
         currentWeatherView.render(currentWeatherConditions)
     }
     

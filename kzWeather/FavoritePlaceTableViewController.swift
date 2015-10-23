@@ -32,6 +32,24 @@ class FavoritePlaceTableViewController: UITableViewController {
         
     }
     
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "rowSelectNavigate" {
+            print("Go to this event")
+            let mainViewController = segue.destinationViewController as! ViewController
+            // Get the cell that generated this segue.
+            if let selectedPlaceCell = sender as? FavoritePlaceTableViewCell {
+                
+                let indexPath = tableView.indexPathForCell(selectedPlaceCell)!
+                let selectedFavoritePlace = favoritePlaces[indexPath.row]
+                mainViewController.currentPlace = selectedFavoritePlace
+                print("mainViewController.currentPlace.Name" + mainViewController.currentPlace!.name)
+            }
+        }
+        
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

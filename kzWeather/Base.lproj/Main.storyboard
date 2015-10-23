@@ -20,20 +20,24 @@
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="VBI-kF-GFS">
                         <rightBarButtonItems>
-                            <barButtonItem title="List" id="R5L-M3-Jbm">
+                            <barButtonItem image="listplace" id="R5L-M3-Jbm">
                                 <connections>
-                                    <segue destination="bKN-4i-zFM" kind="show" identifier="showFavoritePlaces" id="xaH-Gf-T8d"/>
+                                    <segue destination="zKD-zW-MQY" kind="presentation" identifier="showFavoritePlaces" id="xaH-Gf-T8d"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="favorite" width="20" id="MDq-2H-yx8" colorLabel="IBBuiltInLabel-Red"/>
+                            <barButtonItem image="favorite" id="4AT-sP-UxZ">
+                                <connections>
+                                    <action selector="addToFavorite:" destination="BYZ-38-t0r" id="5ZM-2d-1wM"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806.5" y="401.5"/>
+            <point key="canvasLocation" x="739.5" y="401.5"/>
         </scene>
-        <!--Favorite Place Table View Controller-->
+        <!--Favorite Places-->
         <scene sceneID="9PR-fY-yZC">
             <objects>
                 <tableViewController id="bKN-4i-zFM" customClass="FavoritePlaceTableViewController" customModule="kzWeather" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,6 +63,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="gy5-ee-Zos" id="7VP-ec-sq0"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="rowSelectNavigate" id="efX-GB-YBH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -67,11 +72,19 @@
                             <outlet property="delegate" destination="bKN-4i-zFM" id="KZQ-ig-Uqf"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Favorite Places" id="A5V-Zb-72d">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="da4-du-HSz"/>
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="AeX-80-Pef">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="doneBtnNavigation" id="jjy-ET-BhN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r46-bJ-4Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273.5" y="401.5"/>
+            <point key="canvasLocation" x="1413.5" y="401.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="unf-b0-biN">
@@ -92,8 +105,30 @@
             </objects>
             <point key="canvasLocation" x="303" y="402"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="to8-CX-qOq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zKD-zW-MQY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SsK-Oi-341">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bKN-4i-zFM" kind="relationship" relationship="rootViewController" id="Tny-kq-7xk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQc-vv-hI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="1160"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="favorite" width="64" height="64"/>
+        <image name="favorite" width="23" height="23"/>
+        <image name="listplace" width="23" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="efX-GB-YBH"/>
+    </inferredMetricsTieBreakers>
 </document>
