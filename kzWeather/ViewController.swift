@@ -82,6 +82,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Load saved the data.
         if let savedFavoritePlaces = loadFavoritePlaces() {
             favoritePlaces += savedFavoritePlaces
+            btnAddFavorite.enabled = false
         }
         
         isLoadFavoritePlace = false;
@@ -229,9 +230,9 @@ private extension ViewController {
         let placeItem  = favoritePlaces.filter{ $0.name == currentWeatherItem?.cityName  }.first
         //if (favoritePlaces.findMatchingValue( { $0.name == self.currentPlace!.name } ) == nil) {
         if (placeItem == nil) {
-            btnAddFavorite.enabled = false
-        } else {
             btnAddFavorite.enabled = true
+        } else {
+            btnAddFavorite.enabled = false
         }
         
         // 2015/10/23 Vinh Hua Quoc added end
@@ -277,24 +278,12 @@ private extension ViewController {
     }
     
     func renderHourly(weatherConditions: Array<WeatherCondition>){
+        print("Run render 1")
         hourlyForecastView.render(weatherConditions)
     }
     
     func renderDaily(weatherConditions: Array<WeatherCondition>){
+        print("Run render 2")
         daysForecastView.render(weatherConditions)
     }
 }
-
-// 2015/10/26 Vinh Hua Quoc start
-extension Array {
-    // Returns the first element satisfying the predicate, or `nil`
-    func findMatchingValue<L : BooleanType>(predicate: Element -> L) -> Element? {
-        for item in self {
-            if predicate(item) {
-                return item
-            }
-        }
-        return nil
-    }
-}
-// 2015/10/26 Vinh Hua Quoc start
