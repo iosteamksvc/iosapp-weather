@@ -25,13 +25,16 @@
                                     <segue destination="zKD-zW-MQY" kind="presentation" identifier="showFavoritePlaces" id="xaH-Gf-T8d"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="favorite" id="4AT-sP-UxZ">
+                            <barButtonItem image="favorite" id="Dea-ZX-KVI">
                                 <connections>
-                                    <action selector="addToFavorite:" destination="BYZ-38-t0r" id="5ZM-2d-1wM"/>
+                                    <action selector="addToFavorite:" destination="BYZ-38-t0r" id="Rdw-NE-QQK"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnAddFavorite" destination="Dea-ZX-KVI" id="wvl-2l-dwU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +77,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorite Places" id="A5V-Zb-72d">
                         <barButtonItem key="backBarButtonItem" title="Back" id="da4-du-HSz"/>
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="AeX-80-Pef">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="AeX-80-Pef">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="doneBtnNavigation" id="jjy-ET-BhN"/>
                             </connections>
@@ -129,6 +132,6 @@
         <image name="listplace" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="efX-GB-YBH"/>
+        <segue reference="jjy-ET-BhN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,20 +16,39 @@ class FavoritePlaceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Use the edit button item provided by the table view controller.
+        navigationItem.rightBarButtonItem = editButtonItem()
+        
         // Load the sample data.
-        loadSampleFavoritePlace()
-        
+        if let savedFavoritePlaces = loadFavoritePlaces() {
+            favoritePlaces += savedFavoritePlaces
+        }
     }
-
+    
+    /*
     func loadSampleFavoritePlace(){
-        let place1 = FavoritePlace(name: "Place Test 1")!
+        let place1 = FavoritePlace(name: "Place Test 1", latitude: 0 , longtitude: 0)!
         
-        let place2 = FavoritePlace(name: "Place Test 2")!
+        let place2 = FavoritePlace(name: "Place Test 2", latitude: 0 , longtitude: 0)!
         
-        let place3 = FavoritePlace(name: "Place Test 3")!
+        let place3 = FavoritePlace(name: "Place Test 3", latitude: 0 , longtitude: 0)!
         
         favoritePlaces += [place1, place2, place3]
         
+    }
+    */
+
+    // MARK: NSCoding
+    func saveFavoritePlaces() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favoritePlaces, toFile: FavoritePlace.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save favorite place...")
+        }
+        print(FavoritePlace.ArchiveURL.path)
+    }
+    
+    func loadFavoritePlaces() -> [FavoritePlace]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(FavoritePlace.ArchiveURL.path!) as? [FavoritePlace]
     }
     
     // MARK: Navigation
@@ -90,17 +109,26 @@ class FavoritePlaceTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
+            favoritePlaces.removeAtIndex(indexPath.row)
+            
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favoritePlaces, toFile: FavoritePlace.ArchiveURL.path!)
+            
+            if !isSuccessfulSave {
+                print("Failed to save favorite place...")
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

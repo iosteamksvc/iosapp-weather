@@ -19,20 +19,52 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     private let scrollView = UIScrollView()
     private var locationService: LocationService?
     
+    // 2015/10/23 Vinh Hua Quoc added start
     @IBAction func addToFavorite(sender: AnyObject) {
-        print("Name:" + (currentWeatherItem?.cityName)!)
-        
+        currentPlace = FavoritePlace(name: (currentWeatherItem?.cityName)!, latitude: userLatitude, longtitude: userLongtitude)!
+        saveFavoritePlaces()
     }
-    // MARK: 2015/10/23 Vinh Hua Quoc added start
+    
+    @IBOutlet weak var btnAddFavorite: UIBarButtonItem!
+    
+    var favoritePlaces = [FavoritePlace]()
+    
     var currentPlace: FavoritePlace?
     
     var currentWeatherItem: WeatherCondition?
     
+    var userLatitude: Double!
     
+    var userLongtitude: Double!
+    
+    var isLoadFavoritePlace: Bool!
+    
+    // MARK: NSCoding
+    func saveFavoritePlaces() {
+        
+        let placeItem  = favoritePlaces.filter{ $0.name == self.currentPlace!.name  }.first
+        //if (favoritePlaces.findMatchingValue( { $0.name == self.currentPlace!.name } ) == nil) {
+        if (placeItem == nil) {
+            favoritePlaces.append(currentPlace!)
+        }
+        //}
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favoritePlaces, toFile: FavoritePlace.ArchiveURL.path!)
+        
+        if !isSuccessfulSave {
+            print("Failed to save favorite place...")
+        }
+    }
+    
+    func loadFavoritePlaces() -> [FavoritePlace]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(FavoritePlace.ArchiveURL.path!) as? [FavoritePlace]
+    }
     
     // 2015/10/23 Vinh Hua Quoc added end
     
     override func viewDidLoad() {
+        print("View Did Load")
+        
         super.viewDidLoad()
         
         //self.view.addSubview(currentWeatherView)
@@ -46,8 +78,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         view.addSubview(scrollView)
         // MARK: 2015/10/23 Vinh Hua Quoc added start
-        if let currentPlace = currentPlace {
-            print("View_Did_Load:"+currentPlace.name)
+        
+        // Load saved the data.
+        if let savedFavoritePlaces = loadFavoritePlaces() {
+            favoritePlaces += savedFavoritePlaces
+        }
+        
+        isLoadFavoritePlace = false;
+        if let currentPlace = currentPlace
+        //if !currentPlace!.name.isEmpty
+        {
+            print("Load_Name:" + currentPlace.name)
+            print("Load_Latitide:\(currentPlace.latitude)")
+            print("Load_Longtitude:\(currentPlace.longtitude)")
+            isLoadFavoritePlace = true
         }
         // 2015/10/23 Vinh Hua Quoc added end
         
@@ -61,28 +105,73 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        print("View Will Appear")
+
         super.viewWillAppear(animated)
         
         let weatherDatastore = WeatherDatastore()
         
-        locationService = LocationService() { [weak self] location in
-        
-            weatherDatastore.retrieveCurrentWeatherAtLat(location.lat, lon: location.lon) {
-                currentWeatherConditions in
+        if isLoadFavoritePlace == false {
+            print("isLoadFavoritePlace: false")
+            locationService = LocationService() { [weak self] location in
+            
+            
+                // 2015/10/26 Vinh Hua Quoc added start
+                self!.userLatitude = location.lat
+                self!.userLongtitude = location.lon
+                //self!.currentPlace!.latitude = location.lat ?? 0
+                //self!.currentPlace!.longtitude = location.lon ?? 0
+                // 2015/10/26 Vinh Hua Quoc added end
+            
+            
+                weatherDatastore.retrieveCurrentWeatherAtLat(location.lat, lon: location.lon) {
+                    currentWeatherConditions in
+                        self?.renderCurrent(currentWeatherConditions)
+                        return
+                }
+            
+                weatherDatastore.retrieveHourlyForecastAtLat(location.lat, lon: location.lon) {
+                    hourlyWeatherConditions in
+                        self?.renderHourly(hourlyWeatherConditions)
+                        return
+                }
+                weatherDatastore.retrieveDailyForecastAtLat(location.lat, lon: location.lon, dayCnt: 7) {
+                    hourlyWeatherConditions in
+                    self?.renderDaily(hourlyWeatherConditions)
+                    return
+                }
+            }
+        } else {
+            print("isLoadFavoritePlace: true")
+            locationService = LocationService() { [weak self] location in
+                
+                
+                // 2015/10/26 Vinh Hua Quoc added start
+                self!.userLatitude = location.lat
+                self!.userLongtitude = location.lon
+                //self!.currentPlace!.latitude = location.lat ?? 0
+                //self!.currentPlace!.longtitude = location.lon ?? 0
+                // 2015/10/26 Vinh Hua Quoc added end
+                
+                
+                weatherDatastore.retrieveCurrentWeatherAtLat(self!.currentPlace!.latitude, lon: self!.currentPlace!.longtitude) {
+                    currentWeatherConditions in
                     self?.renderCurrent(currentWeatherConditions)
                     return
-            }
-            
-            weatherDatastore.retrieveHourlyForecastAtLat(location.lat, lon: location.lon) {
-                hourlyWeatherConditions in
+                }
+                
+                weatherDatastore.retrieveHourlyForecastAtLat(self!.currentPlace!.latitude, lon: self!.currentPlace!.longtitude) {
+                    hourlyWeatherConditions in
                     self?.renderHourly(hourlyWeatherConditions)
                     return
+                }
+                weatherDatastore.retrieveDailyForecastAtLat(self!.currentPlace!.latitude, lon: self!.currentPlace!.longtitude, dayCnt: 7) {
+                    hourlyWeatherConditions in
+                    self?.renderDaily(hourlyWeatherConditions)
+                    return
+                }
             }
-            weatherDatastore.retrieveDailyForecastAtLat(location.lat, lon: location.lon, dayCnt: 7) {
-                hourlyWeatherConditions in
-                self?.renderDaily(hourlyWeatherConditions)
-                return
-            }
+
         }
     }
 }
@@ -128,12 +217,25 @@ private extension ViewController {
 
 // MARK: Render
 private extension ViewController {
+    
     func renderCurrent(currentWeatherConditions: WeatherCondition){
         
         // 2015/10/23 Vinh Hua Quoc added start
+        
+        print("Run render")
+        
         currentWeatherItem = currentWeatherConditions
-        print(currentWeatherItem?.cityName)
+        
+        let placeItem  = favoritePlaces.filter{ $0.name == currentWeatherItem?.cityName  }.first
+        //if (favoritePlaces.findMatchingValue( { $0.name == self.currentPlace!.name } ) == nil) {
+        if (placeItem == nil) {
+            btnAddFavorite.enabled = false
+        } else {
+            btnAddFavorite.enabled = true
+        }
+        
         // 2015/10/23 Vinh Hua Quoc added end
+        
         if currentWeatherConditions.windSpeed > 38.0 {
             let localNotification:UILocalNotification = UILocalNotification()
             localNotification.alertAction = "kzWeather"
@@ -183,4 +285,16 @@ private extension ViewController {
     }
 }
 
-
+// 2015/10/26 Vinh Hua Quoc start
+extension Array {
+    // Returns the first element satisfying the predicate, or `nil`
+    func findMatchingValue<L : BooleanType>(predicate: Element -> L) -> Element? {
+        for item in self {
+            if predicate(item) {
+                return item
+            }
+        }
+        return nil
+    }
+}
+// 2015/10/26 Vinh Hua Quoc start
