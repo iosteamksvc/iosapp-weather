@@ -25,6 +25,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         saveFavoritePlaces()
     }
     
+    @IBAction func refreshLocation(sender: AnyObject) {
+        print("reload location")
+        //self.viewDidLoad()
+        //self.viewWillAppear(true)
+        //scrollView.setNeedsDisplay()
+    }
+    
     @IBOutlet weak var btnAddFavorite: UIBarButtonItem!
     
     var favoritePlaces = [FavoritePlace]()
@@ -89,9 +96,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if let currentPlace = currentPlace
         //if !currentPlace!.name.isEmpty
         {
-            print("Load_Name:" + currentPlace.name)
-            print("Load_Latitide:\(currentPlace.latitude)")
-            print("Load_Longtitude:\(currentPlace.longtitude)")
             isLoadFavoritePlace = true
         }
         // 2015/10/23 Vinh Hua Quoc added end

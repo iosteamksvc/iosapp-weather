@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vxT-lw-Mch">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -19,6 +20,11 @@
                         <color key="backgroundColor" red="0.037859059343434365" green="0.037859059343434365" blue="0.037859059343434365" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="VBI-kF-GFS">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="bcO-qt-Pjx">
+                            <connections>
+                                <action selector="refreshLocation:" destination="BYZ-38-t0r" id="mla-Im-Yqc"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="listplace" id="R5L-M3-Jbm">
                                 <connections>
@@ -132,6 +138,6 @@
         <image name="listplace" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EEQ-Oc-x2n"/>
+        <segue reference="jjy-ET-BhN"/>
     </inferredMetricsTieBreakers>
 </document>
