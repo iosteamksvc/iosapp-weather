@@ -321,6 +321,7 @@
 				TargetAttributes = {
 					FB5779C31BCE686400C1B22E = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 7J9PH9Q4MN;
 					};
 					FB5779DA1BCE686500C1B22E = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -598,7 +599,9 @@
 			baseConfigurationReference = 57F363B108EA0F827477F2F6 /* Pods-kzWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = kzWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosteamksvc.kzWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -610,7 +613,9 @@
 			baseConfigurationReference = 5F0CEA7A8A0164FD4A244E73 /* Pods-kzWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = kzWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosteamksvc.kzWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";

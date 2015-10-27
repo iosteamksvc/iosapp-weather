@@ -206,9 +206,9 @@ private extension ViewController {
             view.centerX == view.superview!.centerX
         }
         
-        let currentWeatherInsect: CGFloat = view.frame.height - 160 - 10
+        //let currentWeatherInsect: CGFloat = view.frame.height - 10
         constrain(currentWeatherView) { view in
-            view.top == view.superview!.top + currentWeatherInsect
+        view.top == view.superview!.top + 65
             return
         }
         

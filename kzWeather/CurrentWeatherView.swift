@@ -105,7 +105,7 @@ private extension CurrentWeatherView{
 private extension CurrentWeatherView{
     func layoutView(){
         constrain(self) { view in
-            view.height == 160
+           view.height == 200
         }
         constrain(iconLbl) { view in
             view.top == view.superview!.top
