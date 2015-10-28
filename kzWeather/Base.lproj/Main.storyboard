@@ -20,7 +20,7 @@
                         <color key="backgroundColor" red="0.037859059343434365" green="0.037859059343434365" blue="0.037859059343434365" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="VBI-kF-GFS">
-                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="bcO-qt-Pjx">
+                        <barButtonItem key="leftBarButtonItem" image="current_location" id="bcO-qt-Pjx">
                             <connections>
                                 <action selector="refreshLocation:" destination="BYZ-38-t0r" id="mla-Im-Yqc"/>
                             </connections>
@@ -134,6 +134,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="current_location" width="23" height="23"/>
         <image name="favorite" width="23" height="23"/>
         <image name="listplace" width="23" height="23"/>
     </resources>

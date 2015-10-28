@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		366E50F31BE079E3004C6B69 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E50F21BE079E3004C6B69 /* Constant.swift */; settings = {ASSET_TAGS = (); }; };
 		8095C8D6E5540FA1E177B732 /* Pods_kzWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */; };
 		EE13DD9A1BD76CDE00BE6999 /* WeatherHourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD991BD76CDE00BE6999 /* WeatherHourlyForecastView.swift */; settings = {ASSET_TAGS = (); }; };
 		EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD9B1BD7926300BE6999 /* CurrentWeatherView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		366E50F21BE079E3004C6B69 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		57F363B108EA0F827477F2F6 /* Pods-kzWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0CEA7A8A0164FD4A244E73 /* Pods-kzWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.release.xcconfig"; sourceTree = "<group>"; };
 		D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kzWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 			children = (
 				EE9F9EDB1BD88CFB008D6FF7 /* Utils.swift */,
 				EE6EE9EB1BDA115A00453049 /* Animation.swift */,
+				366E50F21BE079E3004C6B69 /* Constant.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				EE13DD9E1BD79AE000BE6999 /* InfoDayView.swift in Sources */,
 				FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */,
 				EE9F9EDA1BD88B4D008D6FF7 /* WeatherSettingView.swift in Sources */,
+				366E50F31BE079E3004C6B69 /* Constant.swift in Sources */,
 				EE6E2BB91BD10497006492F3 /* Functions.swift in Sources */,
 				EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */,
 				FB0DDE651BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift in Sources */,

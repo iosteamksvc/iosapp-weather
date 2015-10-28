@@ -6,10 +6,18 @@
 //  Copyright © 2015 iosteamksvc. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Double {
     func roundToInt() -> Int{
         return Int(round(self))
     }
+}
+
+func alertMessage(inTitle: String, inMessage: String){
+    let alert = UIAlertView()
+    alert.title = inTitle
+    alert.message = inMessage
+    alert.addButtonWithTitle("OK")
+    alert.show()
 }

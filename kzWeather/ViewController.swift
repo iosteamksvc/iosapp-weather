@@ -13,58 +13,106 @@ import Cartography
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
+    // child view current weather
     private let currentWeatherView = CurrentWeatherView(frame: CGRectZero)
+    // child view hourly weather
     private let hourlyForecastView = WeatherHourlyForecastView(frame: CGRectZero)
+    // child view days forecast
     private let daysForecastView = WeatherDaysForecastView(frame: CGRectZero)
+    // parent scroll view
     private let scrollView = UIScrollView()
+    // location service
     private var locationService: LocationService?
     
     // 2015/10/23 Vinh Hua Quoc added start
+    
+    // Action when click Favorite button
     @IBAction func addToFavorite(sender: AnyObject) {
         currentPlace = FavoritePlace(name: (currentWeatherItem?.cityName)!, latitude: userLatitude, longtitude: userLongtitude)!
         saveFavoritePlaces()
     }
     
+    // Action when click Refresh button
     @IBAction func refreshLocation(sender: AnyObject) {
-        print("reload location")
-        //self.viewDidLoad()
-        //self.viewWillAppear(true)
-        //scrollView.setNeedsDisplay()
+        print("Reload location")
+        locationService = LocationService() {
+            [weak self] location in
+            
+            self!.userLatitude = location.lat
+            self!.userLongtitude = location.lon
+            self!.callWeatherWebServer(location.lat, inLongtitude: location.lon)
+        }
+        scrollView.setNeedsDisplay()
     }
     
+    // Label of favarite button
     @IBOutlet weak var btnAddFavorite: UIBarButtonItem!
     
+    // Array content favorite places
     var favoritePlaces = [FavoritePlace]()
     
+    // Current favorite place
     var currentPlace: FavoritePlace?
     
+    // Current Weather Item
     var currentWeatherItem: WeatherCondition?
     
+    // Current user Latitude
     var userLatitude: Double!
-    
+    // Current user longtitude
     var userLongtitude: Double!
-    
+    // Check if lacation from favorite array
     var isLoadFavoritePlace: Bool!
     
     // MARK: NSCoding
+    
+    // save favorite places
     func saveFavoritePlaces() {
         
+        // Check current place is contains in favorite array
         let placeItem  = favoritePlaces.filter{ $0.name == self.currentPlace!.name  }.first
-        //if (favoritePlaces.findMatchingValue( { $0.name == self.currentPlace!.name } ) == nil) {
-        if (placeItem == nil) {
-            favoritePlaces.append(currentPlace!)
-        }
-        //}
         
+        if (placeItem == nil) {
+            // add new location to favorite places
+            favoritePlaces.append(currentPlace!)
+            // disable btn favorite
+            btnAddFavorite.enabled = false
+        }
+        
+        // check is save success
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favoritePlaces, toFile: FavoritePlace.ArchiveURL.path!)
         
         if !isSuccessfulSave {
-            print("Failed to save favorite place...")
+            alertMessage(DIALOG_ERROR_TITLE, inMessage: MSG_ERROR_SAVE_FAVORITEPLACE)
         }
     }
     
+    // load favorite places
     func loadFavoritePlaces() -> [FavoritePlace]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(FavoritePlace.ArchiveURL.path!) as? [FavoritePlace]
+    }
+    
+    // get Weather from Web Service
+    func callWeatherWebServer(inLatitude: Double, inLongtitude: Double) {
+        let weatherDatastore = WeatherDatastore()
+        
+        weatherDatastore.retrieveCurrentWeatherAtLat(inLatitude, lon: inLongtitude) {
+            currentWeatherConditions in
+            self.renderCurrent(currentWeatherConditions)
+            return
+        }
+        
+        weatherDatastore.retrieveHourlyForecastAtLat(inLatitude, lon: inLongtitude) {
+            hourlyWeatherConditions in
+            self.renderHourly(hourlyWeatherConditions)
+            return
+        }
+        weatherDatastore.retrieveDailyForecastAtLat(inLatitude, lon: inLongtitude, dayCnt: 7) {
+            hourlyWeatherConditions in
+            self.renderDaily(hourlyWeatherConditions)
+            return
+        }
+
     }
     
     // 2015/10/23 Vinh Hua Quoc added end
@@ -73,10 +121,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         print("View Did Load")
         
         super.viewDidLoad()
-        
-        //self.view.addSubview(currentWeatherView)
-        //self.view.addSubview(hourlyForecastView)
-        //self.view.addSubview(daysForecastView)
         
         scrollView.showsVerticalScrollIndicator = false
         scrollView.addSubview(currentWeatherView)
@@ -92,93 +136,47 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             btnAddFavorite.enabled = false
         }
         
+        // Check current location or load location
         isLoadFavoritePlace = false;
-        if let currentPlace = currentPlace
-        //if !currentPlace!.name.isEmpty
+        if currentPlace != nil
         {
             isLoadFavoritePlace = true
         }
-        // 2015/10/23 Vinh Hua Quoc added end
         
+        // Show layout
         layoutView()
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(animated: Bool) {
         print("View Will Appear")
 
         super.viewWillAppear(animated)
         
-        let weatherDatastore = WeatherDatastore()
-        
+        // 2015/10/26 Vinh Hua Quoc added start
         if isLoadFavoritePlace == false {
             print("isLoadFavoritePlace: false")
-            locationService = LocationService() { [weak self] location in
             
+            locationService = LocationService() {
+                [weak self] location in
             
-                // 2015/10/26 Vinh Hua Quoc added start
                 self!.userLatitude = location.lat
                 self!.userLongtitude = location.lon
-                //self!.currentPlace!.latitude = location.lat ?? 0
-                //self!.currentPlace!.longtitude = location.lon ?? 0
-                // 2015/10/26 Vinh Hua Quoc added end
-            
-            
-                weatherDatastore.retrieveCurrentWeatherAtLat(location.lat, lon: location.lon) {
-                    currentWeatherConditions in
-                        self?.renderCurrent(currentWeatherConditions)
-                        return
-                }
-            
-                weatherDatastore.retrieveHourlyForecastAtLat(location.lat, lon: location.lon) {
-                    hourlyWeatherConditions in
-                        self?.renderHourly(hourlyWeatherConditions)
-                        return
-                }
-                weatherDatastore.retrieveDailyForecastAtLat(location.lat, lon: location.lon, dayCnt: 7) {
-                    hourlyWeatherConditions in
-                    self?.renderDaily(hourlyWeatherConditions)
-                    return
-                }
+                self!.callWeatherWebServer(location.lat, inLongtitude: location.lon)
             }
         } else {
             print("isLoadFavoritePlace: true")
-            locationService = LocationService() { [weak self] location in
-                
-                
-                // 2015/10/26 Vinh Hua Quoc added start
-                self!.userLatitude = location.lat
-                self!.userLongtitude = location.lon
-                //self!.currentPlace!.latitude = location.lat ?? 0
-                //self!.currentPlace!.longtitude = location.lon ?? 0
-                // 2015/10/26 Vinh Hua Quoc added end
-                
-                
-                weatherDatastore.retrieveCurrentWeatherAtLat(self!.currentPlace!.latitude, lon: self!.currentPlace!.longtitude) {
-                    currentWeatherConditions in
-                    self?.renderCurrent(currentWeatherConditions)
-                    return
-                }
-                
-                weatherDatastore.retrieveHourlyForecastAtLat(self!.currentPlace!.latitude, lon: self!.currentPlace!.longtitude) {
-                    hourlyWeatherConditions in
-                    self?.renderHourly(hourlyWeatherConditions)
-                    return
-                }
-                weatherDatastore.retrieveDailyForecastAtLat(self!.currentPlace!.latitude, lon: self!.currentPlace!.longtitude, dayCnt: 7) {
-                    hourlyWeatherConditions in
-                    self?.renderDaily(hourlyWeatherConditions)
-                    return
-                }
-            }
-
+            
+            callWeatherWebServer((currentPlace?.latitude)!, inLongtitude: (currentPlace?.longtitude)!)
         }
+        // 2015/10/26 Vinh Hua Quoc added end
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
 }
 
 // MARK: Layout
@@ -232,7 +230,6 @@ private extension ViewController {
         currentWeatherItem = currentWeatherConditions
         
         let placeItem  = favoritePlaces.filter{ $0.name == currentWeatherItem?.cityName  }.first
-        //if (favoritePlaces.findMatchingValue( { $0.name == self.currentPlace!.name } ) == nil) {
         if (placeItem == nil) {
             btnAddFavorite.enabled = true
         } else {
