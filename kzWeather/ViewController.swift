@@ -35,6 +35,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // Action when click Refresh button
     @IBAction func refreshLocation(sender: AnyObject) {
         print("Reload location")
+        isCalledRender = false
         locationService = LocationService() {
             [weak self] location in
             
@@ -63,6 +64,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var userLongtitude: Double!
     // Check if lacation from favorite array
     var isLoadFavoritePlace: Bool!
+    
+    // set render call one time
+    var isCalledRender: Bool!
     
     // MARK: NSCoding
     
@@ -97,8 +101,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let weatherDatastore = WeatherDatastore()
         
         weatherDatastore.retrieveCurrentWeatherAtLat(inLatitude, lon: inLongtitude) {
+            
             currentWeatherConditions in
             self.renderCurrent(currentWeatherConditions)
+            
             return
         }
         
@@ -112,7 +118,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             self.renderDaily(hourlyWeatherConditions)
             return
         }
-
+        
     }
     
     // 2015/10/23 Vinh Hua Quoc added end
@@ -134,6 +140,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             favoritePlaces += savedFavoritePlaces
             btnAddFavorite.enabled = false
         }
+        //
+        isCalledRender = false;
         
         // Check current location or load location
         isLoadFavoritePlace = false;
@@ -198,6 +206,7 @@ private extension ViewController {
             view.centerX == view.superview!.centerX
         }
         
+        
         constrain(hourlyForecastView, currentWeatherView) { view, view2 in
             view.top == view2.bottom + 20
             view.width == view.superview!.width
@@ -210,6 +219,7 @@ private extension ViewController {
             view.bottom == view.superview!.bottom - 20
             view.centerX == view.superview!.centerX
         }
+        
         
         //let currentWeatherInsect: CGFloat = view.frame.height - 10
         constrain(currentWeatherView) { view in
@@ -226,68 +236,76 @@ private extension ViewController {
     
     func renderCurrent(currentWeatherConditions: WeatherCondition){
         
-        // 2015/10/23 Vinh Hua Quoc added start
+        // check if render havent calling
+        if isCalledRender == false {
+
+            // 2015/10/23 Vinh Hua Quoc added start
         
-        print("Run render")
+            print("Run render")
         
-        currentWeatherItem = currentWeatherConditions
+            currentWeatherItem = currentWeatherConditions
         
-        let placeItem  = favoritePlaces.filter{ $0.name == currentWeatherItem?.cityName  }.first
-        if (placeItem == nil) {
-            btnAddFavorite.enabled = true
-        } else {
-            btnAddFavorite.enabled = false
-        }
+            let placeItem  = favoritePlaces.filter{ $0.name == currentWeatherItem?.cityName  }.first
+            if (placeItem == nil) {
+                btnAddFavorite.enabled = true
+            } else {
+                btnAddFavorite.enabled = false
+            }
         
-        // 2015/10/23 Vinh Hua Quoc added end
+            // 2015/10/23 Vinh Hua Quoc added end
         
-        if currentWeatherConditions.windSpeed > 38.0 {
-            let localNotification:UILocalNotification = UILocalNotification()
-            localNotification.alertAction = "kzWeather"
-            localNotification.alertBody = "It's going to be windy today!"
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        }
+            if currentWeatherConditions.windSpeed > 38.0 {
+                let localNotification:UILocalNotification = UILocalNotification()
+                localNotification.alertAction = "kzWeather"
+                localNotification.alertBody = "It's going to be windy today!"
+                localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            }
         
-        if currentWeatherConditions.rain == 1.0 {
-            let localNotification:UILocalNotification = UILocalNotification()
-            localNotification.alertAction = "kzWeather"
-            localNotification.alertBody = "Don't forget your umbrella today!"
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        }
+            if currentWeatherConditions.rain == 1.0 {
+                let localNotification:UILocalNotification = UILocalNotification()
+                localNotification.alertAction = "kzWeather"
+                localNotification.alertBody = "Don't forget your umbrella today!"
+                localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            }
         
-        if currentWeatherConditions.maxTempCelsius >= 35 {
+            if currentWeatherConditions.maxTempCelsius >= 35 {
             
-            let localNotification:UILocalNotification = UILocalNotification()
-            localNotification.alertAction = "kzWeather"
-            localNotification.alertBody = "It's going to be Hot today!"
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                let localNotification:UILocalNotification = UILocalNotification()
+                localNotification.alertAction = "kzWeather"
+                localNotification.alertBody = "It's going to be Hot today!"
+                localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
             
+            }
+        
+            if currentWeatherConditions.minTempCelsius <= 20 {
+            
+                let localNotification:UILocalNotification = UILocalNotification()
+                localNotification.alertAction = "kzWeather"
+                localNotification.alertBody = "It's going to be Cold today!"
+                localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            
+            }
+        
+        
+            currentWeatherView.render(currentWeatherConditions)
+            
+            // set render call one time
+            isCalledRender = true
+        
         }
-        
-        if currentWeatherConditions.minTempCelsius <= 20 {
-            
-            let localNotification:UILocalNotification = UILocalNotification()
-            localNotification.alertAction = "kzWeather"
-            localNotification.alertBody = "It's going to be Cold today!"
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 8)
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            
-        }
-        
-        
-        currentWeatherView.render(currentWeatherConditions)
     }
     
+    
     func renderHourly(weatherConditions: Array<WeatherCondition>){
-        print("Run render 1")
         hourlyForecastView.render(weatherConditions)
     }
     
+    
     func renderDaily(weatherConditions: Array<WeatherCondition>){
-        print("Run render 2")
         daysForecastView.render(weatherConditions)
     }
 }

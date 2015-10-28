@@ -24,6 +24,7 @@ class WeatherHourlyForecastView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     override func updateConstraints() {
+        
         if didSetupConstraints {
             super.updateConstraints()
             return
@@ -31,6 +32,7 @@ class WeatherHourlyForecastView: UIView {
         layoutView()
         super.updateConstraints()
         didSetupConstraints = true
+        
     }
 }
 

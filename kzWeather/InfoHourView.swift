@@ -24,7 +24,9 @@ class InfoHourView : UIView {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func updateConstraints() {
+        
         if didSetupConstraints {
             super.updateConstraints()
             return
@@ -32,7 +34,9 @@ class InfoHourView : UIView {
         layoutView()
         super.updateConstraints()
         didSetupConstraints = true
+
     }
+    
 }
 
 // MARK: Setup
