@@ -77,9 +77,14 @@ private extension InfoDayView{
 private extension InfoDayView{
     func style(){
         iconLabel.textColor = UIColor.whiteColor()
-        dayLabel.font = UIFont.latoFontOfSize(20)
+        iconLabel.attributedText = WIKFontIcon.wiDaySunnyIconWithSize(20).attributedString()
+        
+        dayLabel.text = "---"
+        dayLabel.font = UIFont.latoFontOfSize(18)
         dayLabel.textColor = UIColor.whiteColor()
-        tempsLabel.font = UIFont.latoFontOfSize(20)
+        
+        tempsLabel.text = "---"
+        tempsLabel.font = UIFont.latoFontOfSize(18)
         tempsLabel.textColor = UIColor.whiteColor()
     }
 }

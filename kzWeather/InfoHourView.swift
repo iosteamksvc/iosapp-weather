@@ -66,10 +66,14 @@ private extension InfoHourView {
 private extension InfoHourView {
     func style(){
         iconLabel.textColor = UIColor.whiteColor()
-        hourLabel.font = UIFont.latoFontOfSize(20)
+        iconLabel.attributedText = WIKFontIcon.wiDaySunnyIconWithSize(20).attributedString()
+        hourLabel.text = "00:00"
+        hourLabel.font = UIFont.latoFontOfSize(18)
         hourLabel.textColor = UIColor.whiteColor()
-        tempsLabel.font = UIFont.latoFontOfSize(20)
+        tempsLabel.text = "0°"
+        tempsLabel.font = UIFont.latoFontOfSize(18)
         tempsLabel.textColor = UIColor.whiteColor()
+        
     }
 }
 

@@ -255,9 +255,9 @@ private extension CurrentWeatherView{
         
         iconLbl.attributedText = WIKFontIcon.wiDaySunnyIconWithSize(20).attributedString()
         weatherLbl.text = "Sunny"
-        minTempLbl.text = "4°"
-        maxTempLbl.text = "10°"
-        currentTempLbl.text = "6°"
+        minTempLbl.text = "0°"
+        maxTempLbl.text = "0°"
+        currentTempLbl.text = "0°"
         cityLbl.text = "Unknown"
         
     }
