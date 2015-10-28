@@ -83,7 +83,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favoritePlaces, toFile: FavoritePlace.ArchiveURL.path!)
         
         if !isSuccessfulSave {
-            alertMessage(DIALOG_ERROR_TITLE, inMessage: MSG_ERROR_SAVE_FAVORITEPLACE)
+            alertMessage(Constant.DIALOG_ERROR_TITLE, inMessage: Constant.MSG_ERROR_SAVE_FAVORITEPLACE)
         }
     }
     
@@ -128,7 +128,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addSubview(daysForecastView)
         scrollView.delegate = self
         view.addSubview(scrollView)
-        // MARK: 2015/10/23 Vinh Hua Quoc added start
         
         // Load saved the data.
         if let savedFavoritePlaces = loadFavoritePlaces() {
@@ -142,6 +141,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         {
             isLoadFavoritePlace = true
         }
+        
+        // Set navigation bar style
+        navigationController!.navigationBar.barTintColor = Constant.NAVIGATION_BAR_COLOR
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Constant.NAVIGATION_TITLE_TEXT_COLOR]
         
         // Show layout
         layoutView()

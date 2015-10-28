@@ -127,7 +127,7 @@ private extension CurrentWeatherView{
         
         //-----Wind Speed Area Start--------------
         constrain(windTextlbl, currentTempLbl) { view, view2 in
-            view.top == view2.top + 20
+            view.top == view2.top + 35
             view.left == view2.right + 30
         }
         constrain(windBagIv, windTextlbl) { view, view2 in

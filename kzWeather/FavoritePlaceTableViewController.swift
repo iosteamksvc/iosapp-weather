@@ -23,6 +23,11 @@ class FavoritePlaceTableViewController: UITableViewController {
         if let savedFavoritePlaces = loadFavoritePlaces() {
             favoritePlaces += savedFavoritePlaces
         }
+        
+        // Set navigation bar style
+        navigationController!.navigationBar.barTintColor = Constant.NAVIGATION_BAR_COLOR
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Constant.NAVIGATION_TITLE_TEXT_COLOR]
+
     }
     
     /*
@@ -31,7 +36,7 @@ class FavoritePlaceTableViewController: UITableViewController {
         
         let place2 = FavoritePlace(name: "Place Test 2", latitude: 0 , longtitude: 0)!
         
-        let place3 = FavoritePlace(name: "Place Test 3", latitude: 0 , longtitude: 0)!
+        let place3 = FavoritePlace(name: "Place Test 3", latitude: 0 , longtitude. 0)!
         
         favoritePlaces += [place1, place2, place3]
         

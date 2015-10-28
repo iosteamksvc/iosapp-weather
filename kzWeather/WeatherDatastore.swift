@@ -28,6 +28,7 @@ class WeatherDatastore {
                         block(weatherCondition: self.createWeatherConditionFromJson(json))
                     } else {
                         print("FUCKKKK")
+                        //alertMessage(Constant.DIALOG_ERROR_TITLE, inMessage: "No network!")
                     }
             }
     }
@@ -49,6 +50,7 @@ class WeatherDatastore {
                         block(weatherConditions: weatherConditions)
                     } else {
                         print("FUCKKKK")
+                        //alertMessage(Constant.DIALOG_ERROR_TITLE, inMessage: "No network!")
                     }
             }
     }
@@ -72,6 +74,7 @@ class WeatherDatastore {
                         block(weatherConditions: daysWithoutToday)
                     } else {
                         print("FUCKKKK")
+                        //alertMessage(Constant.DIALOG_ERROR_TITLE, inMessage: "No network!")
                     }
             }
     }
