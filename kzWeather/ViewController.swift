@@ -10,6 +10,7 @@ import UIKit
 import LatoFont
 import WeatherIconsKit
 import Cartography
+import SystemConfiguration
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
@@ -34,6 +35,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     // Action when click Refresh button
     @IBAction func refreshLocation(sender: AnyObject) {
+        getLocationAgain()
+    }
+    // refresh location
+    func getLocationAgain(){
         print("Reload location")
         isCalledRender = false
         locationService = LocationService() {
@@ -45,6 +50,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         scrollView.setNeedsDisplay()
     }
+    
     
     // Label of favarite button
     @IBOutlet weak var btnAddFavorite: UIBarButtonItem!
@@ -128,6 +134,30 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         super.viewDidLoad()
         
+        Network.isConnectedToNetwork(self, inFunction: getLocationAgain)
+        
+        /*
+        if Network.isConnectedToNetwork() {
+            getLocationAgain()
+        } else {
+            Network.showNetworkError(self)
+        }
+        */
+        
+        /*
+        if (isConnectedToNetwork()) {
+            print("Connected to internet")
+        } else {
+            print("No Internet")
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) in
+                print("WTF")
+            }
+            alert.addAction(okButton)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        */
+        
         scrollView.showsVerticalScrollIndicator = false
         scrollView.addSubview(currentWeatherView)
         scrollView.addSubview(hourlyForecastView)
@@ -187,7 +217,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
 }
 
 // MARK: Layout
