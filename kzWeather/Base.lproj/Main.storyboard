@@ -39,6 +39,7 @@
                             <barButtonItem systemItem="search" id="OgB-hV-2J3">
                                 <connections>
                                     <action selector="searchLocation:" destination="BYZ-38-t0r" id="oXQ-RW-zPO"/>
+                                    <segue destination="iYt-s8-XtL" kind="show" id="xaq-gg-hvF"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -121,6 +122,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAv-t9-LkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="303" y="402"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ee0-mi-y8w">
+            <objects>
+                <viewController id="iYt-s8-XtL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V1c-Gz-N6T"/>
+                        <viewControllerLayoutGuide type="bottom" id="QXy-DS-JJe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Ms-nN-NcR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0w-2O-KZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277.5" y="1193.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="to8-CX-qOq">

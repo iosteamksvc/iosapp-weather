@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		365C0D331BE22F9E002852C8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C0D321BE22F9E002852C8 /* Network.swift */; settings = {ASSET_TAGS = (); }; };
 		366E50F31BE079E3004C6B69 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E50F21BE079E3004C6B69 /* Constant.swift */; settings = {ASSET_TAGS = (); }; };
+		36EB07401BE761600042016A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB073F1BE761600042016A /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		36EB07411BE761600042016A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB073F1BE761600042016A /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		36EB07421BE761600042016A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB073F1BE761600042016A /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8095C8D6E5540FA1E177B732 /* Pods_kzWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */; };
 		EE13DD9A1BD76CDE00BE6999 /* WeatherHourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD991BD76CDE00BE6999 /* WeatherHourlyForecastView.swift */; settings = {ASSET_TAGS = (); }; };
 		EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD9B1BD7926300BE6999 /* CurrentWeatherView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -32,7 +35,6 @@
 		FB0DDE5F1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		FB0DDE651BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DDE641BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		FB5779C81BCE686400C1B22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C71BCE686400C1B22E /* AppDelegate.swift */; };
-		FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5779C91BCE686400C1B22E /* ViewController.swift */; };
 		FB5779CD1BCE686400C1B22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB5779CB1BCE686400C1B22E /* Main.storyboard */; };
 		FB5779D01BCE686500C1B22E /* kzWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB5779CE1BCE686400C1B22E /* kzWeather.xcdatamodeld */; };
 		FB5779D21BCE686500C1B22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5779D11BCE686500C1B22E /* Assets.xcassets */; };
@@ -61,6 +63,7 @@
 /* Begin PBXFileReference section */
 		365C0D321BE22F9E002852C8 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		366E50F21BE079E3004C6B69 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		36EB073F1BE761600042016A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57F363B108EA0F827477F2F6 /* Pods-kzWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0CEA7A8A0164FD4A244E73 /* Pods-kzWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.release.xcconfig"; sourceTree = "<group>"; };
 		D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kzWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +84,6 @@
 		FB0DDE641BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePlaceTableViewCell.swift; sourceTree = "<group>"; };
 		FB5779C41BCE686400C1B22E /* kzWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kzWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5779C71BCE686400C1B22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB5779C91BCE686400C1B22E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB5779CC1BCE686400C1B22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB5779CF1BCE686400C1B22E /* kzWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kzWeather.xcdatamodel; sourceTree = "<group>"; };
 		FB5779D11BCE686500C1B22E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,8 +178,8 @@
 		EEB0A0171BD6532200EF9645 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB5779C91BCE686400C1B22E /* ViewController.swift */,
 				FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */,
+				36EB073F1BE761600042016A /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -440,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE6E2BB31BD0DEBB006492F3 /* WeatherCondition.swift in Sources */,
-				FB5779CA1BCE686400C1B22E /* ViewController.swift in Sources */,
 				FB0AA8871BCF63F500FD889E /* InfoHourView.swift in Sources */,
 				FB0DDE551BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,
 				EE9F9EDC1BD88CFB008D6FF7 /* Utils.swift in Sources */,
@@ -450,6 +451,7 @@
 				366E50F31BE079E3004C6B69 /* Constant.swift in Sources */,
 				EE6E2BB91BD10497006492F3 /* Functions.swift in Sources */,
 				365C0D331BE22F9E002852C8 /* Network.swift in Sources */,
+				36EB07401BE761600042016A /* ViewController.swift in Sources */,
 				EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */,
 				FB0DDE651BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift in Sources */,
 				FB0DDE5D1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
@@ -466,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EB07411BE761600042016A /* ViewController.swift in Sources */,
 				FB5779E01BCE686500C1B22E /* kzWeatherTests.swift in Sources */,
 				FB0DDE5E1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
 				FB0DDE561BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,
@@ -477,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EB07421BE761600042016A /* ViewController.swift in Sources */,
 				FB5779EB1BCE686500C1B22E /* kzWeatherUITests.swift in Sources */,
 				FB0DDE5F1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
 				FB0DDE571BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,

@@ -10,6 +10,7 @@ target 'kzWeather' do
     pod 'WeatherIconsKit', :git => "https://github.com/gscalzo/WeatherIconsKit.git"
     pod 'LatoFont', :git => "https://github.com/gscalzo/LatoFont.git"
     pod 'Cartography', :git => "https://github.com/robb/Cartography.git"
+    pod 'GooglePlacesAutocomplete', :git => "https://github.com/watsonbox/ios_google_places_autocomplete.git"
 end
 
 target 'kzWeatherTests' do

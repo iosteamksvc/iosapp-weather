@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (3.0.1)
   - Cartography (0.5.0)
+  - GooglePlacesAutocomplete (0.3.0)
   - LatoFont (1.0.1)
   - SwiftyJSON (2.3.0)
   - WeatherIconsKit (1.0.0)
@@ -8,6 +9,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`)
   - Cartography (from `https://github.com/robb/Cartography.git`)
+  - GooglePlacesAutocomplete (from `https://github.com/watsonbox/ios_google_places_autocomplete.git`)
   - LatoFont (from `https://github.com/gscalzo/LatoFont.git`)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - WeatherIconsKit (from `https://github.com/gscalzo/WeatherIconsKit.git`)
@@ -17,6 +19,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/Alamofire/Alamofire.git
   Cartography:
     :git: https://github.com/robb/Cartography.git
+  GooglePlacesAutocomplete:
+    :git: https://github.com/watsonbox/ios_google_places_autocomplete.git
   LatoFont:
     :git: https://github.com/gscalzo/LatoFont.git
   SwiftyJSON:
@@ -31,6 +35,9 @@ CHECKOUT OPTIONS:
   Cartography:
     :commit: f667b493beaf71645d1e4f805db9d0c2fc87353a
     :git: https://github.com/robb/Cartography.git
+  GooglePlacesAutocomplete:
+    :commit: 3b24a37eca923c5d92253122f26a2cd41f10ec5a
+    :git: https://github.com/watsonbox/ios_google_places_autocomplete.git
   LatoFont:
     :commit: 2739e4c28c92c82ca2c7daf289a238d62af01c42
     :git: https://github.com/gscalzo/LatoFont.git
@@ -44,6 +51,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
   Cartography: 314f5ed1495995760487161eeb7a8a0940d88ad3
+  GooglePlacesAutocomplete: 7694636fce561c9d8ac807b8e490d299a730a633
   LatoFont: 0bfeace154ee2da6080123d0e80560f6e22b187d
   SwiftyJSON: cacfe0373d584585716bd1d43202c24cc66afd65
   WeatherIconsKit: 84526a4cdf9da972c2866f24e40360420b1d40bf
