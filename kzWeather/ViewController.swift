@@ -11,6 +11,7 @@ import LatoFont
 import WeatherIconsKit
 import Cartography
 import SystemConfiguration
+import MBProgressHUD
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
@@ -40,6 +41,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // refresh location
     func getLocationAgain(){
         print("Reload location")
+        // 2015/11/02 Thuong added start
+        currentWeatherView.currentForcastAnimation()
+        // 2015/11/02 Thuong added end
         isCalledRender = false
         locationService = LocationService() {
             [weak self] location in
@@ -104,8 +108,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     // get Weather from Web Service
     func callWeatherWebServer(inLatitude: Double, inLongtitude: Double) {
-        let weatherDatastore = WeatherDatastore()
         
+        // 2015/11/02 Thuong added start
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        loadingNotification.labelText = "Loading"
+        // 2015/11/02 Thuong added end
+        
+        let weatherDatastore = WeatherDatastore()
         weatherDatastore.retrieveCurrentWeatherAtLat(inLatitude, lon: inLongtitude) {
             
             currentWeatherConditions in
@@ -124,7 +134,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             self.renderDaily(hourlyWeatherConditions)
             return
         }
-        
+        // 2015/11/02 Thuong added start
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        // 2015/11/02 Thuong added end
     }
     
     // 2015/10/23 Vinh Hua Quoc added end
@@ -301,7 +313,7 @@ private extension ViewController {
                 UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
             }
         
-            if currentWeatherConditions.maxTempCelsius >= 35 {
+            if currentWeatherConditions.maxTempKelvin >= 90 {
             
                 let localNotification:UILocalNotification = UILocalNotification()
                 localNotification.alertAction = "kzWeather"
@@ -311,7 +323,7 @@ private extension ViewController {
             
             }
         
-            if currentWeatherConditions.minTempCelsius <= 20 {
+            if currentWeatherConditions.minTempKelvin <= 60 {
             
                 let localNotification:UILocalNotification = UILocalNotification()
                 localNotification.alertAction = "kzWeather"

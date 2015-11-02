@@ -10,6 +10,7 @@ target 'kzWeather' do
     pod 'WeatherIconsKit', :git => "https://github.com/gscalzo/WeatherIconsKit.git"
     pod 'LatoFont', :git => "https://github.com/gscalzo/LatoFont.git"
     pod 'Cartography', :git => "https://github.com/robb/Cartography.git"
+    pod 'MBProgressHUD', '~> 0.9.1'
 end
 
 target 'kzWeatherTests' do
