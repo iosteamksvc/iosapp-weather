@@ -9,7 +9,7 @@
         <!--Weather-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="kzWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="kzWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,11 +20,18 @@
                         <color key="backgroundColor" red="0.037859059343434365" green="0.037859059343434365" blue="0.037859059343434365" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="VBI-kF-GFS">
-                        <barButtonItem key="leftBarButtonItem" image="current_location" id="bcO-qt-Pjx">
-                            <connections>
-                                <action selector="refreshLocation:" destination="BYZ-38-t0r" id="mla-Im-Yqc"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem image="current_location" id="bcO-qt-Pjx">
+                                <connections>
+                                    <action selector="refreshLocation:" destination="BYZ-38-t0r" id="mla-Im-Yqc"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="rva-bJ-VDa">
+                                <connections>
+                                    <segue destination="iYt-s8-XtL" kind="show" id="RS2-6U-mxh"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem image="listplace" id="R5L-M3-Jbm">
                                 <connections>
@@ -34,12 +41,6 @@
                             <barButtonItem image="favorite" id="Dea-ZX-KVI">
                                 <connections>
                                     <action selector="addToFavorite:" destination="BYZ-38-t0r" id="Rdw-NE-QQK"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="search" id="OgB-hV-2J3">
-                                <connections>
-                                    <action selector="searchLocation:" destination="BYZ-38-t0r" id="oXQ-RW-zPO"/>
-                                    <segue destination="iYt-s8-XtL" kind="show" id="xaq-gg-hvF"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -123,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="303" y="402"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Places View Controller-->
         <scene sceneID="Ee0-mi-y8w">
             <objects>
-                <viewController id="iYt-s8-XtL" sceneMemberID="viewController">
+                <viewController id="iYt-s8-XtL" customClass="SearchPlacesViewController" customModule="kzWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V1c-Gz-N6T"/>
                         <viewControllerLayoutGuide type="bottom" id="QXy-DS-JJe"/>
@@ -140,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0w-2O-KZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.5" y="1193.5"/>
+            <point key="canvasLocation" x="302.5" y="1186.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="to8-CX-qOq">

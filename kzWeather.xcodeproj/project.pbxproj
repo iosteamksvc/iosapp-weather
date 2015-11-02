@@ -12,6 +12,9 @@
 		36EB07401BE761600042016A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB073F1BE761600042016A /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		36EB07411BE761600042016A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB073F1BE761600042016A /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		36EB07421BE761600042016A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB073F1BE761600042016A /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		36EB07441BE762910042016A /* SearchPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB07431BE762910042016A /* SearchPlacesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		36EB07451BE762910042016A /* SearchPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB07431BE762910042016A /* SearchPlacesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		36EB07461BE762910042016A /* SearchPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EB07431BE762910042016A /* SearchPlacesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8095C8D6E5540FA1E177B732 /* Pods_kzWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */; };
 		EE13DD9A1BD76CDE00BE6999 /* WeatherHourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD991BD76CDE00BE6999 /* WeatherHourlyForecastView.swift */; settings = {ASSET_TAGS = (); }; };
 		EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13DD9B1BD7926300BE6999 /* CurrentWeatherView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -64,6 +67,7 @@
 		365C0D321BE22F9E002852C8 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		366E50F21BE079E3004C6B69 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		36EB073F1BE761600042016A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		36EB07431BE762910042016A /* SearchPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewController.swift; sourceTree = "<group>"; };
 		57F363B108EA0F827477F2F6 /* Pods-kzWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0CEA7A8A0164FD4A244E73 /* Pods-kzWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kzWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-kzWeather/Pods-kzWeather.release.xcconfig"; sourceTree = "<group>"; };
 		D08F482081AA546DA75A0B99 /* Pods_kzWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kzWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +184,7 @@
 			children = (
 				FB0DDE5C1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift */,
 				36EB073F1BE761600042016A /* ViewController.swift */,
+				36EB07431BE762910042016A /* SearchPlacesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				36EB07401BE761600042016A /* ViewController.swift in Sources */,
 				EE13DD9C1BD7926300BE6999 /* CurrentWeatherView.swift in Sources */,
 				FB0DDE651BD8EC12004C50CA /* FavoritePlaceTableViewCell.swift in Sources */,
+				36EB07441BE762910042016A /* SearchPlacesViewController.swift in Sources */,
 				FB0DDE5D1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
 				EE13DDA01BD79B8B00BE6999 /* WeatherDaysForecastView.swift in Sources */,
 				FB5779D01BCE686500C1B22E /* kzWeather.xcdatamodeld in Sources */,
@@ -472,6 +478,7 @@
 				FB5779E01BCE686500C1B22E /* kzWeatherTests.swift in Sources */,
 				FB0DDE5E1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
 				FB0DDE561BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,
+				36EB07451BE762910042016A /* SearchPlacesViewController.swift in Sources */,
 				FB0AA8881BCF63F500FD889E /* InfoHourView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +491,7 @@
 				FB5779EB1BCE686500C1B22E /* kzWeatherUITests.swift in Sources */,
 				FB0DDE5F1BD8E0CA004C50CA /* FavoritePlaceTableViewController.swift in Sources */,
 				FB0DDE571BD8DBCE004C50CA /* FavoritePlace.swift in Sources */,
+				36EB07461BE762910042016A /* SearchPlacesViewController.swift in Sources */,
 				FB0AA8891BCF63F500FD889E /* InfoHourView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
