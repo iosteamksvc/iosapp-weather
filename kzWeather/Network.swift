@@ -41,13 +41,11 @@ class Network {
                 status = true
             }
         }
-        //-----
         if(status) {
             inFunction()
         } else {
             showNetworkError(inView, inFunction: inFunction)
         }
-        //-----
         return status
     }
 

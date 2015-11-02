@@ -33,6 +33,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         saveFavoritePlaces()
     }
     
+    // Action when click search
+    @IBAction func searchLocation(sender: AnyObject) {
+        
+    }
     // Action when click Refresh button
     @IBAction func refreshLocation(sender: AnyObject) {
         getLocationAgain()
@@ -135,28 +139,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         Network.isConnectedToNetwork(self, inFunction: getLocationAgain)
-        
-        /*
-        if Network.isConnectedToNetwork() {
-            getLocationAgain()
-        } else {
-            Network.showNetworkError(self)
-        }
-        */
-        
-        /*
-        if (isConnectedToNetwork()) {
-            print("Connected to internet")
-        } else {
-            print("No Internet")
-            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
-            let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) in
-                print("WTF")
-            }
-            alert.addAction(okButton)
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        */
         
         scrollView.showsVerticalScrollIndicator = false
         scrollView.addSubview(currentWeatherView)
