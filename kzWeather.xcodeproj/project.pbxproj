@@ -327,7 +327,7 @@
 				TargetAttributes = {
 					FB5779C31BCE686400C1B22E = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 7J9PH9Q4MN;
+						DevelopmentTeam = NXX3SHH5WQ;
 					};
 					FB5779DA1BCE686500C1B22E = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -611,7 +611,7 @@
 				INFOPLIST_FILE = kzWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iosteamksvc.kzWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosteamksvc.kzWeatherThuong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -625,7 +625,7 @@
 				INFOPLIST_FILE = kzWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iosteamksvc.kzWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosteamksvc.kzWeatherThuong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

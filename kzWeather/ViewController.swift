@@ -42,9 +42,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func getLocationAgain(){
         print("Reload location")
         // 2015/11/02 Thuong added start
-        currentWeatherView.currentForcastAnimation()
+        // currentWeatherView.currentForcastAnimation()
         // 2015/11/02 Thuong added end
-        isCalledRender = false
+        // isCalledRender = false
         locationService = LocationService() {
             [weak self] location in
             
@@ -52,6 +52,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             self!.userLongtitude = location.lon
             self!.callWeatherWebServer(location.lat, inLongtitude: location.lon)
         }
+        currentWeatherView.currentForcastAnimation()
         scrollView.setNeedsDisplay()
     }
     
@@ -76,7 +77,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var isLoadFavoritePlace: Bool!
     
     // set render call one time
-    var isCalledRender: Bool!
+    // var isCalledRender: Bool!
     
     // MARK: NSCoding
     
@@ -183,7 +184,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             btnAddFavorite.enabled = false
         }
         //
-        isCalledRender = false;
+        // isCalledRender = false;
         
         // Check current location or load location
         isLoadFavoritePlace = false;
@@ -280,7 +281,7 @@ private extension ViewController {
     func renderCurrent(currentWeatherConditions: WeatherCondition){
         
         // check if render havent calling
-        if isCalledRender == false {
+        // if isCalledRender == false {
 
             // 2015/10/23 Vinh Hua Quoc added start
         
@@ -337,9 +338,9 @@ private extension ViewController {
             currentWeatherView.render(currentWeatherConditions)
             
             // set render call one time
-            isCalledRender = true
+            // isCalledRender = true
         
-        }
+        // }
     }
     
     
